@@ -1,0 +1,103 @@
+{
+  "menu": {
+    "service": "Service",
+    "costs": "Costs",
+    "benefits": "Benefits",
+    "partners": "Partners",
+    "apply": "Apply"
+  },
+
+  "hero": {
+    "title": "Modern distribution for labels and independent artists",
+    "text": "Boost your music with a professional, transparent digital distribution solution designed to grow with you. At Modura Distribution, we simplify every stage of the process, giving you full control, efficiency, and reliable support so you can focus solely on creating.",
+    "start": "Get Started"
+  },
+
+  "service": {
+    "title": "What do we do?",
+    "text": "We distribute your music to more than 100 digital stores and platforms worldwide. Our system is optimized for labels and artists seeking an agile, seamless experience with real tools to manage their catalog."
+  },
+
+  "costs": {
+    "title": "Commission and costs",
+    "commission": "Standard commission: 30% of net royalties.",
+    "noFees": "No hidden fees, upfront payments, or subscriptions. At Modura, we only earn when you earn."
+  },
+
+  "benefits": {
+    "title": "Main benefits",
+    "cards": [
+      {
+        "title": "Global distribution",
+        "text": "In more than 100 stores and DSPs."
+      },
+      {
+        "title": "Smart splits system",
+        "text": "Ideal for labels and artist collaborations."
+      },
+      {
+        "title": "Promos and demos manager",
+        "text": "Integrated."
+      },
+      {
+        "title": "Technical support and personalized attention",
+        "text": "Based on the needs of your label or project."
+      },
+      {
+        "title": "Free UPC/ISRC codes",
+        "text": "Use yours if you prefer."
+      }
+    ]
+  },
+
+  "analytics": {
+    "title": "Analytics and reports",
+    "text": "Monitor the performance of all your releases in real time. The dashboard allows access to:",
+    "cards": [
+      {
+        "title": "Daily statistics of streams and sales.",
+        "text": ""
+      },
+      {
+        "title": "Complete reports",
+        "text": "Apple Music, Spotify, Beatport, iTunes and more."
+      },
+      {
+        "title": "Income history",
+        "text": "Dates, country, platform, and release."
+      }
+    ]
+  },
+
+  "royalties": {
+    "title": "Payments and royalties",
+    "cards": [
+      {
+        "title": "Royalty reports",
+        "text": "We issue royalty reports monthly, during the first week of each month."
+      },
+      {
+        "title": "Payments",
+        "text": "Payments are made through PayPal."
+      },
+      {
+        "title": "Payment request",
+        "text": "You can request payment starting at a minimum of $50 USD."
+      }
+    ]
+  },
+
+  "applications": {
+    "title": "Applications",
+    "text": "MODURA is open to labels and independent artists seeking serious, transparent distribution aligned with professional standards. Each application is carefully reviewed to ensure the overall quality of catalog.",
+    "b":" MODURA'S."
+  },
+
+  "partners": {
+    "title": "Associated stores and platforms"
+  },
+
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}

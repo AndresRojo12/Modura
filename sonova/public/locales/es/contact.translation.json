@@ -1,0 +1,44 @@
+{
+  "contact": {
+    "title": "Contáctanos",
+    "subtitle": "Estamos listos para ayudarte. Responderemos tu mensaje lo antes posible.",
+    "name": "Nombre",
+    "name_placeholder": "Tu nombre",
+
+    "lastName": "Apellido",
+    "lastName_placeholder": "Tu apellido",
+
+    "email": "Correo electrónico",
+    "email_placeholder": "email@ejemplo.com",
+
+    "category": "Categoría",
+    "category_placeholder": "Selecciona una categoría",
+    "category_artist": "Artista",
+    "category_labelName": "Sello",
+
+    "artistName": "Nombre del artista",
+    "artistName_placeholder": "Ingresa el nombre del Artista",
+
+    "labelName": "Nombre del sello",
+    "labelName_placeholder": "Ingresa el nombre del Sello",
+
+    "musicPlatforms": "Plataformas musicales",
+    "musicPlatforms_add": "+ Agregar plataforma",
+    "musicPlatforms_select": "Selecciona plataforma",
+
+    "socials": "Tus redes",
+    "socials_add": "+ Agregar red",
+    "socials_select": "Selecciona red",
+
+    "url_placeholder": "https://...",
+
+    "message": "Mensaje",
+    "message_placeholder": "Cuéntanos en qué podemos ayudarte...",
+
+    "submit": "Enviar mensaje",
+
+    "status_required": "Por favor completa todos los campos obligatorios.",
+    "status_success": "Mensaje enviado correctamente 🎉",
+    "status_error": "Error al enviar el mensaje. Intenta de nuevo."
+  }
+}

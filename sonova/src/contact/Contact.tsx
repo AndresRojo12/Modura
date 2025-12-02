@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next"; 
 import {
   FaInstagram,
   FaTiktok,
@@ -23,6 +24,11 @@ export default function Contact() {
       jobOffer: "",
     },
   });
+
+  const { t, i18n } = useTranslation("contact.translation");
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+  }
 
   const musicPlatforms = [
     {
@@ -144,7 +150,7 @@ export default function Contact() {
     };
 
     if (!data.name || !data.email || !data.jobOffer) {
-      setStatus("Por favor completa todos los campos obligatorios.");
+      setStatus(t('contact.status_required'));
       return;
     }
 
@@ -155,7 +161,7 @@ export default function Contact() {
         body: JSON.stringify(data),
       });
 
-      setStatus("Mensaje enviado correctamente 🎉");
+      setStatus(t('contact.status_success'));
 
       setForm({
         payload: {
@@ -171,71 +177,85 @@ export default function Contact() {
         },
       });
     } catch (error) {
-      setStatus("Error al enviar el mensaje. Intenta de nuevo.");
+      setStatus(t('contact.status_error'));
     }
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-6 py-20">
-      <div className="max-w-xl w-full bg-white p-10 rounded-2xl shadow-xl border border-gray-200">
-        <h1 className="text-4xl font-bold text-center mb-6">Contáctanos</h1>
-        <p className="text-center text-gray-600 mb-10">
-          Estamos listos para ayudarte. Responderemos tu mensaje lo antes
-          posible.
-        </p>
+    <>
+    <header className="w-full px-10 py-4 fixed top-0 left-0 bg-white/90 backdrop-blur-md border-b border-gray-200 z-50">
 
+    <div className="max-w-6xl mx-auto flex justify-end">
+      <select
+                      onChange={(e) => changeLanguage(e.target.value)}
+                      defaultValue={i18n.language}
+                      className="bg-white border rounded px-3 py-1 text-black"
+                    >
+                      <option value="es">ES</option>
+                      <option value="en">EN</option>
+                    </select>
+    </div>
+    </header>
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-6 py-20">
+      
+      <div className="max-w-xl w-full bg-white p-10 rounded-2xl shadow-xl border border-gray-200">
+        
+        <h1 className="text-4xl font-bold text-center mb-6">{t('contact.title')}</h1>
+        <p className="text-center text-gray-600 mb-10">
+          {t('contact.subtitle')}
+        </p>
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Nombre */}
           <div>
-            <label className="block mb-2 font-medium">Nombre</label>
+            <label className="block mb-2 font-medium">{t('contact.name')}</label>
             <input
               type="text"
               name="name"
               value={form.payload.name}
               onChange={handleChange}
               className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-green-500"
-              placeholder="Tu nombre"
+              placeholder={t('contact.name_placeholder')}
             />
           </div>
 
           {/* Apellido */}
           <div>
-            <label className="block mb-2 font-medium">Apellido</label>
+            <label className="block mb-2 font-medium">{t('contact.lastName')}</label>
             <input
               type="text"
               name="lastName"
               value={form.payload.lastName}
               onChange={handleChange}
               className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-green-500"
-              placeholder="Tu apellido"
+              placeholder={t('contact.lastName_placeholder')}
             />
           </div>
 
           {/* Email */}
           <div>
-            <label className="block mb-2 font-medium">Correo electrónico</label>
+            <label className="block mb-2 font-medium">{t('contact.email')}</label>
             <input
               type="email"
               name="email"
               value={form.payload.email}
               onChange={handleChange}
               className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-green-500"
-              placeholder="email@ejemplo.com"
+              placeholder={t('contact.email_placeholder')}
             />
           </div>
 
           {/* Categoría (texto por ahora) */}
           <div>
-            <label className="block mb-2 font-medium">Categoría</label>
+            <label className="block mb-2 font-medium">{t('contact.category')}</label>
             <select
               name="category"
               value={form.payload.category}
               onChange={handleChange}
               className="w-full border border-gray-300 rounded-lg p-3"
             >
-              <option value="">Selecciona una categoría</option>
-              <option value="Artista">Artista</option>
-              <option value="Sello">Sello</option>
+              <option value="">{t('contact.category_placeholder')}</option>
+              <option value="Artista">{t('contact.category_artist')}</option>
+              <option value="Sello">{t('contact.category_labelName')}</option>
             </select>
           </div>
 
@@ -244,7 +264,8 @@ export default function Contact() {
           {form.payload.category === "Artista" && (
             <div>
               <label className="block mb-2 font-medium">
-                Nombre del artista
+                {t('contact.artistName')}
+                
               </label>
               <input
                 type="text"
@@ -252,21 +273,21 @@ export default function Contact() {
                 value={form.payload.artistName}
                 onChange={handleChange}
                 className="w-full border border-gray-300 rounded-lg p-3"
-                placeholder="Ingresa el nombre del Artista"
+                placeholder={t('contact.artistName_placeholder')}
               />
             </div>
           )}
 
           {form.payload.category === "Sello" && (
             <div>
-              <label className="block mb-2 font-medium">Nombre del sello</label>
+              <label className="block mb-2 font-medium">{t('contact.labelName')}</label>
               <input
                 type="text"
                 name="sealNAME"
                 value={form.payload.sealNAME}
                 onChange={handleChange}
                 className="w-full border border-gray-300 rounded-lg p-3"
-                placeholder="Ingresa el nombre del Sello"
+                placeholder={t('contact.labelName_placeholder')}
               />
             </div>
           )}
@@ -287,7 +308,8 @@ export default function Contact() {
           {/* Plataformas musicales */}
           <div className="mt-8">
             <label className="block mb-2 font-medium">
-              Plataformas musicales
+              {t('contact.musicPlatforms')}
+              
             </label>
 
             <div className="space-y-4">
@@ -304,7 +326,7 @@ export default function Contact() {
                     }
                     className="border p-2 rounded-lg"
                   >
-                    <option value="">Selecciona plataforma</option>
+                    <option value="">{t('contact.musicPlatforms_select')}</option>
                     {musicPlatforms.map((p) => (
                       <option key={p.name} value={p.name}>
                         {p.name}
@@ -338,8 +360,8 @@ export default function Contact() {
               type="button"
               onClick={addMusic}
               className="mt-3 bg-black text-white px-3 py-2 rounded-lg"
-            >
-              + Agregar plataforma
+            >{t('contact.musicPlatforms_add')}
+          
             </button>
           </div>
 
@@ -367,7 +389,7 @@ export default function Contact() {
 
           {/* Redes Sociales */}
           <div>
-            <label className="block mb-2 font-medium">Tus redes</label>
+            <label className="block mb-2 font-medium">{t('contact.socials')}</label>
 
             {/* Lista de redes agregadas */}
             <div className="space-y-4">
@@ -384,7 +406,7 @@ export default function Contact() {
                     }
                     className="border p-2 rounded-lg"
                   >
-                    <option value="">Selecciona red</option>
+                    <option value="">{t('contact.socials_select')}</option>
                     {socialPlatforms.map((p) => (
                       <option key={p.name} value={p.name}>
                         {p.name}
@@ -418,8 +440,8 @@ export default function Contact() {
               type="button"
               onClick={addSocial}
               className="mt-3 bg-black text-white px-3 py-2 rounded-lg"
-            >
-              + Agregar red
+            >{t('contact.socials_add')}
+    
             </button>
           </div>
 
@@ -447,14 +469,14 @@ export default function Contact() {
 
           {/* Mensaje */}
           <div>
-            <label className="block mb-2 font-medium">Mensaje</label>
+            <label className="block mb-2 font-medium">{t('contact.message')}</label>
             <textarea
               name="jobOffer"
               value={form.payload.jobOffer}
               onChange={handleChange}
               rows="5"
               className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-green-500"
-              placeholder="Cuéntanos en qué podemos ayudarte..."
+              placeholder={t('contact.message_placeholder')}
             ></textarea>
           </div>
 
@@ -462,8 +484,8 @@ export default function Contact() {
           <button
             type="submit"
             className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-semibold transition"
-          >
-            Enviar mensaje
+          >{t('contact.submit')}
+            
           </button>
         </form>
 
@@ -474,5 +496,6 @@ export default function Contact() {
         )}
       </div>
     </div>
+    </>
   );
 }

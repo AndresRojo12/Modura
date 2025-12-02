@@ -1,0 +1,44 @@
+{
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We are ready to help you. We will respond to your message as soon as possible.",
+    "name": "First Name",
+    "name_placeholder": "Your first name",
+
+    "lastName": "Last Name",
+    "lastName_placeholder": "Your last name",
+
+    "email": "Email",
+    "email_placeholder": "email@example.com",
+
+    "category": "Category",
+    "category_placeholder": "Select a category",
+    "category_artist": "Artist",
+    "category_labelName": "Record Label",
+
+    "artistName": "Artist Name",
+    "artistName_placeholder": "Enter the Artist Name",
+
+    "labelName": "Label Name",
+    "labelName_placeholder": "Enter the Label Name",
+
+    "musicPlatforms": "Music Platforms",
+    "musicPlatforms_add": "+ Add platform",
+    "musicPlatforms_select": "Select platform",
+
+    "socials": "Your Socials",
+    "socials_add": "+ Add social",
+    "socials_select": "Select social network",
+
+    "url_placeholder": "https://...",
+
+    "message": "Message",
+    "message_placeholder": "Tell us how we can help you...",
+
+    "submit": "Send message",
+
+    "status_required": "Please complete all required fields.",
+    "status_success": "Message sent successfully 🎉",
+    "status_error": "Error sending message. Try again."
+  }
+}

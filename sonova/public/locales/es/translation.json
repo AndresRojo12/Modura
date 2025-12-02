@@ -1,0 +1,102 @@
+{
+  "menu": {
+    "service": "Servicio",
+    "costs": "Costos",
+    "benefits": "Beneficios",
+    "partners": "Socios",
+    "apply": "Aplicar"
+  },
+
+  "hero": {
+    "title": "Distribución moderna para sellos y artistas independientes",
+    "text": "Impulsa tu música con una solución de distribución digital profesional, transparente y diseñada para crecer contigo. En Modura Distribution simplificamos cada etapa del proceso, ofreciéndote control total, eficiencia y un soporte confiable para que puedas enfocarte únicamente en crear.",
+    "start": "Comenzar"
+  },
+
+  "service": {
+    "title": "¿Qué hacemos?",
+    "text": "Distribuimos tu música en más de 100 tiendas y plataformas digitales en todo el mundo. Nuestro sistema está optimizado para sellos y artistas que buscan una experiencia ágil, sin complicaciones y con herramientas reales para gestionar su catálogo."
+  },
+
+  "costs": {
+    "title": "Comisión y costos",
+    "commission": "Comisión estándar: 30% sobre regalías netas.",
+    "noFees": "No hay tarifas ocultas, pagos iniciales, ni suscripciones. En Modura solo ganamos cuando tú ganas."
+  },
+
+  "benefits": {
+    "title": "Beneficios principales",
+    "cards": [
+      {
+        "title": "Distribución global",
+        "text": "En más de 100 tiendas y DSPS."
+      },
+      {
+        "title": "Sistema inteligente de splits",
+        "text": "Ideal para sellos y colaboraciones entre artistas."
+      },
+      {
+        "title": "Gestor de promos y demos",
+        "text": "Integrado."
+      },
+      {
+        "title": "Soporte técnico y atención personalizada",
+        "text": "Según las necesidades de tu sello o proyecto."
+      },
+      {
+        "title": "Códigos UPC/ISRC gratuitos",
+        "text": "Usa los tuyos si lo prefieres."
+      }
+    ]
+  },
+
+  "analytics": {
+    "title": "Análisis y reportes",
+    "text": "Supervisa el rendimiento de todos tus lanzamientos en tiempo real. El panel te permite acceder a:",
+    "cards": [
+      {
+        "title": "Estadísticas diarias de streams y ventas.",
+        "text": ""
+      },
+      {
+        "title": "Reportes completos",
+        "text": "Apple Music, Spotify, Beatport, iTunes y más."
+      },
+      {
+        "title": "Historial de ingresos",
+        "text": "Fechas, país, plataforma y lanzamiento."
+      }
+    ]
+  },
+
+  "royalties": {
+    "title": "Pagos y regalías",
+    "cards": [
+      {
+        "title": "Reportes de regalías",
+        "text": "Emitimos reportes de regalías mensualmente, durante la primera semana de cada mes."
+      },
+      {
+        "title": "Pagos",
+        "text": "Los pagos se realizan vía PayPal."
+      },
+      {
+        "title": "Solicitud de pago",
+        "text": "Puedes solicitar pago a partir de un mínimo de $50 USD."
+      }
+    ]
+  },
+
+  "applications": {
+    "title": "Aplicaciones",
+    "text": "MODURA está abierta a sellos y artistas independientes que busquen una distribución seria, transparente y alineada con estándares profesionales. Cada solicitud es evaluada cuidadosamente para garantizar la calidad del catálogo general de MODURA."
+  },
+
+  "partners": {
+    "title": "Tiendas y plataformas asociadas"
+  },
+
+  "footer": {
+    "rights": "Todos los derechos reservados."
+  }
+}
