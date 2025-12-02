@@ -11,7 +11,29 @@ import {
 } from "react-icons/fa6";
 
 export default function Contact() {
-  const [form, setForm] = useState({
+
+  interface LinkItem {
+  platform: string;
+  url: string;
+}
+
+interface FormPayload {
+  name: string;
+  lastName: string;
+  email: string;
+  category: string;
+  artistName: string;
+  sealNAME: string;
+  linkMusic: LinkItem[];
+  socialsLink: LinkItem[];
+  jobOffer: string;
+}
+
+interface FormState {
+  payload: FormPayload;
+}
+
+  const [form, setForm] = useState<FormState>({
     payload: {
       name: "",
       lastName: "",
@@ -71,7 +93,7 @@ export default function Contact() {
   };
 
   // Actualizar campo
-  const updateMusic = (index, field, value) => {
+  const updateMusic = (index:number, field: keyof LinkItem, value:string) => {
     const updated = [...form.payload.linkMusic];
     updated[index][field] = value;
 
@@ -82,7 +104,7 @@ export default function Contact() {
   };
 
   // Eliminar
-  const removeMusic = (index) => {
+  const removeMusic = (index:number) => {
     const updated = form.payload.linkMusic.filter((_, i) => i !== index);
     setForm({
       ...form,
@@ -100,7 +122,7 @@ export default function Contact() {
     });
   };
 
-  const updateSocial = (index, field, value) => {
+  const updateSocial = (index:number, field:keyof LinkItem, value:string) => {
     const updated = [...form.payload.socialsLink];
     updated[index][field] = value;
 
@@ -110,7 +132,7 @@ export default function Contact() {
     });
   };
 
-  const removeSocial = (index) => {
+  const removeSocial = (index:number) => {
     const updated = form.payload.socialsLink.filter((_, i) => i !== index);
     setForm({
       ...form,
@@ -120,7 +142,7 @@ export default function Contact() {
 
   const [status, setStatus] = useState("");
 
-  const handleChange = (e) => {
+  const handleChange = (e:React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
 
     setForm((prevForm) => ({
@@ -132,7 +154,7 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e:React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const socialsFormatted = form.payload.socialsLink
@@ -176,7 +198,8 @@ export default function Contact() {
           jobOffer: "",
         },
       });
-    } catch (error) {
+    } catch (error: unknown) {
+      console.error(error);
       setStatus(t('contact.status_error'));
     }
   };
@@ -474,7 +497,7 @@ export default function Contact() {
               name="jobOffer"
               value={form.payload.jobOffer}
               onChange={handleChange}
-              rows="5"
+              rows={5}
               className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-green-500"
               placeholder={t('contact.message_placeholder')}
             ></textarea>
