@@ -18,7 +18,11 @@ export class ContactService {
 
   async sendContactEmail(
     name: string,
+    lastName: string,
     email: string,
+    category: string[],
+    musicPlatform: string[],
+    yourSocials: string[],
     message: string,
   ): Promise<void> {
     try {
@@ -36,7 +40,11 @@ export class ContactService {
         html: `
           <h2>Nuevo mensaje desde el formulario de contacto</h2>
           <p><strong>Nombre:</strong> ${name}</p>
+            <p><strong>Apellido:</strong> ${lastName}</p>
           <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Categoría:</strong> ${category.join(', ')}</p>
+            <p><strong>Plataforma musical:</strong> ${musicPlatform.join(', ')}</p>
+            <p><strong>Tus redes sociales:</strong> ${yourSocials.join(', ')}</p>
           <p><strong>Mensaje:</strong></p>
           <p>${message}</p>
         `,
