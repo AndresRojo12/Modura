@@ -1,0 +1,7 @@
+javascript: tipado dinamico: es ejecutar codigo para ver que sucede
+
+La alternativa es utilizar un sistema de tipos estáticos para hacer predicciones sobre lo que se espera que haga el código antes de ejecutarse.
+
+typescript:verificador de tipos estaticos
+Los sistemas de tipos estáticos describen las formas y comportamientos de nuestros valores al ejecutar nuestros programas. 
+Un verificador de tipos como TypeScript utiliza esa información y nos avisa cuando algo podría estar fallando.
