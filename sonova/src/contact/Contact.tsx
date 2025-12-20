@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { ToastContainer , Zoom, toast } from "react-toastify";
+import { ToastContainer, Zoom, toast } from "react-toastify";
 import {
   FaInstagram,
   FaTiktok,
@@ -35,16 +35,16 @@ export default function Contact() {
 
   const [form, setForm] = useState<FormState>({
     payload: {
-    name: "",
-    lastName: "",
-    email: "",
-    category: "",
-    artistName: "",
-    sealNAME: "",
-    musicPlatform: [],
-    yourSocials: [],
-    message: "",
-    }
+      name: "",
+      lastName: "",
+      email: "",
+      category: "",
+      artistName: "",
+      sealNAME: "",
+      musicPlatform: [],
+      yourSocials: [],
+      message: "",
+    },
   });
 
   const { t, i18n } = useTranslation("contact.translation");
@@ -87,13 +87,16 @@ export default function Contact() {
       ...form,
       payload: {
         ...form.payload,
-        musicPlatform: [...form.payload.musicPlatform, { platform: "", url: "" }],
+        musicPlatform: [
+          ...form.payload.musicPlatform,
+          { platform: "", url: "" },
+        ],
       },
     });
   };
 
   // Actualizar campo
-  const updateMusic = (index:number, field: keyof LinkItem, value:string) => {
+  const updateMusic = (index: number, field: keyof LinkItem, value: string) => {
     const updated = [...form.payload.musicPlatform];
     updated[index][field] = value;
 
@@ -104,7 +107,7 @@ export default function Contact() {
   };
 
   // Eliminar
-  const removeMusic = (index:number) => {
+  const removeMusic = (index: number) => {
     const updated = form.payload.musicPlatform.filter((_, i) => i !== index);
     setForm({
       ...form,
@@ -122,7 +125,11 @@ export default function Contact() {
     });
   };
 
-  const updateSocial = (index:number, field:keyof LinkItem, value:string) => {
+  const updateSocial = (
+    index: number,
+    field: keyof LinkItem,
+    value: string
+  ) => {
     const updated = [...form.payload.yourSocials];
     updated[index][field] = value;
 
@@ -132,14 +139,13 @@ export default function Contact() {
     });
   };
 
-  const removeSocial = (index:number) => {
+  const removeSocial = (index: number) => {
     const updated = form.payload.yourSocials.filter((_, i) => i !== index);
     setForm({
       ...form,
       payload: { ...form.payload, yourSocials: updated },
     });
   };
-
 
   const [status, setStatus] = useState("");
 
@@ -168,7 +174,7 @@ export default function Contact() {
 
     const musicFormatted = form.payload.musicPlatform
       .map((m) => `<p><strong>${m.platform}:</strong> ${m.url}</p>`)
-      .join("");  
+      .join("");
 
     const payload = {
       ...form.payload,
@@ -182,11 +188,14 @@ export default function Contact() {
     }
 
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL_BACKEND}contact`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+      const res = await fetch(
+        `${import.meta.env.VITE_API_URL_BACKEND}contact`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        }
+      );
 
       if (!res.ok) throw new Error("Error enviando formulario");
 
@@ -194,16 +203,16 @@ export default function Contact() {
 
       setForm({
         payload: {
-        name: "",
-        lastName: "",
-        email: "",
-        category: "",
-        artistName: "",
-        sealNAME: "",
-        musicPlatform: [],
-        yourSocials: [],
-        message: "",
-        }
+          name: "",
+          lastName: "",
+          email: "",
+          category: "",
+          artistName: "",
+          sealNAME: "",
+          musicPlatform: [],
+          yourSocials: [],
+          message: "",
+        },
       });
     } catch (err) {
       console.error(err);
@@ -213,12 +222,12 @@ export default function Contact() {
 
   return (
     <>
-      <header className="w-full px-10 py-4 fixed top-0 left-0 bg-white/90 backdrop-blur-md border-b border-gray-200 z-50">
+      <header className="w-full px-10 py-6 fixed top-0 left-0 bg-violet-100 backdrop-blur-md border-b border-gray-200 z-50">
         <div className="max-w-6xl mx-auto flex justify-end">
           <select
             onChange={(e) => changeLanguage(e.target.value)}
             defaultValue={i18n.language}
-            className="bg-white border rounded px-3 py-1 text-black"
+            className="bg-indigo-500 shadow-lg shadow-indigo-500/50 bg-white border rounded px-3 py-1 text-black"
           >
             <option value="es">ES</option>
             <option value="en">EN</option>
@@ -226,7 +235,7 @@ export default function Contact() {
         </div>
       </header>
       <div className="min-h-screen bg-gray-50 flex items-center justify-center px-6 py-20">
-        <div className="max-w-xl w-full bg-white p-10 rounded-2xl shadow-xl border border-gray-200">
+        <div className="max-w-xl w-full bg-white p-10 rounded-2xl shadow-xl border border-gray-200 mt-10">
           <h1 className="text-4xl font-bold text-center mb-6">
             {t("contact.title")}
           </h1>
@@ -400,7 +409,7 @@ export default function Contact() {
               <button
                 type="button"
                 onClick={addMusic}
-                className="mt-3 bg-black text-white px-3 py-2 rounded-lg"
+                className="mt-3 bg-white text-gray px-3 py-2 rounded-lg bg-indigo-500 shadow-lg shadow-indigo-500/50"
               >
                 {t("contact.musicPlatforms_add")}
               </button>
@@ -484,7 +493,7 @@ export default function Contact() {
               <button
                 type="button"
                 onClick={addSocial}
-                className="mt-3 bg-black text-white px-3 py-2 rounded-lg"
+                className="mt-3 bg-white text-gray px-3 py-2 rounded-lg bg-indigo-500 shadow-lg shadow-indigo-500/50"
               >
                 {t("contact.socials_add")}
               </button>
@@ -530,7 +539,7 @@ export default function Contact() {
             {/* Botón */}
             <button
               type="submit"
-              className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-semibold transition"
+              className="w-full bg-violet-600 hover:bg-violet-700 text-white py-3 rounded-lg font-semibold transition"
             >
               {t("contact.submit")}
             </button>
@@ -543,9 +552,11 @@ export default function Contact() {
           )}
         </div>
       </div>
-      <ToastContainer
-      position="bottom-right"
-      />
+      <ToastContainer position="bottom-right" />
+      {/* FOOTER */}
+      <footer className="text-center py-14 bg-white text-gray mt-20">
+        © {new Date().getFullYear()} Modura Distribution - {t("contact.rights")}
+      </footer>
     </>
   );
 }

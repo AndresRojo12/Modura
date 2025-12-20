@@ -39,6 +39,8 @@
 
     "status_required": "Por favor completa todos los campos obligatorios.",
     "status_success": "Mensaje enviado correctamente 🎉",
-    "status_error": "Error al enviar el mensaje. Intenta de nuevo."
+    "status_error": "Error al enviar el mensaje. Intenta de nuevo.",
+    "rights": "Todos los derechos reservados."
+
   }
 }
