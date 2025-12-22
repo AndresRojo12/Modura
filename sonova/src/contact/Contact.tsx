@@ -62,7 +62,7 @@ export default function Contact() {
       icon: <FaSoundcloud className="text-orange-500 text-2xl" />,
     },
     {
-      name: "YouTube Music",
+      name: "YouTube",
       icon: <FaYoutube className="text-red-600 text-2xl" />,
     },
   ];
@@ -73,7 +73,7 @@ export default function Contact() {
       icon: <FaInstagram className="text-pink-500 text-2xl" />,
     },
     { name: "TikTok", icon: <FaTiktok className="text-black text-2xl" /> },
-    { name: "YouTube", icon: <FaYoutube className="text-red-600 text-2xl" /> },
+    
     {
       name: "Facebook",
       icon: <FaFacebook className="text-blue-600 text-2xl" />,
@@ -234,7 +234,12 @@ export default function Contact() {
         message: "",
       },
     });
-  }
+  };
+
+  const isSubmitDisabled = Object.values(form.payload).every((value) => {
+    if (Array.isArray(value)) return value.length === 0;
+    return value.trim() === "";
+  });
 
   return (
     <>
@@ -554,20 +559,26 @@ export default function Contact() {
 
             {/* Botón */}
             <div className="flex items-center gap-3">
-
-            <button
-              type="submit"
-              className="w-full bg-violet-600 hover:bg-violet-700 text-white py-3 rounded-lg font-semibold transition"
-            >
-              {t("contact.submit")}
-            </button>
-            <button
-              type="button"
-              onClick={clearForm}
-              className="border px-3 py-2 rounded-md bg-white-500 shadow-lg shadow-white-500/50 text-gray-500 font-semibold"
-            >
-              Limpiar
-            </button>
+              <button
+                type="submit"
+                disabled={isSubmitDisabled}
+                className={`w-full  py-3 rounded-lg font-semibold transition
+                ${
+                  isSubmitDisabled
+                    ? "bg-gray-200 cursor-not-allowed text-white"
+                    : "bg-violet-600 hover:bg-violet-700 text-white"
+                }
+              `}
+              >
+                {t("contact.submit")}
+              </button>
+              <button
+                type="button"
+                onClick={clearForm}
+                className="border px-3 py-2 rounded-md bg-white-500 shadow-lg shadow-white-500/50 text-gray-500 font-semibold"
+              >
+                {t("contact.clear")}
+              </button>
             </div>
           </form>
 

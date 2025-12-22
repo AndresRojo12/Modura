@@ -40,7 +40,8 @@
     "status_required": "Please complete all required fields.",
     "status_success": "Message sent successfully 🎉",
     "status_error": "Error sending message. Try again.",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "clear": "Clear"
 
   }
 }
