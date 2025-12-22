@@ -220,6 +220,22 @@ export default function Contact() {
     }
   };
 
+  const clearForm = () => {
+    setForm({
+      payload: {
+        name: "",
+        lastName: "",
+        email: "",
+        category: "",
+        artistName: "",
+        sealNAME: "",
+        musicPlatform: [],
+        yourSocials: [],
+        message: "",
+      },
+    });
+  }
+
   return (
     <>
       <header className="w-full px-10 py-6 fixed top-0 left-0 bg-violet-100 backdrop-blur-md border-b border-gray-200 z-50">
@@ -531,18 +547,28 @@ export default function Contact() {
                 value={form.payload.message}
                 onChange={handleChange}
                 rows={5}
-                className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-violet-500"
                 placeholder={t("contact.message_placeholder")}
               ></textarea>
             </div>
 
             {/* Botón */}
+            <div className="flex items-center gap-3">
+
             <button
               type="submit"
               className="w-full bg-violet-600 hover:bg-violet-700 text-white py-3 rounded-lg font-semibold transition"
             >
               {t("contact.submit")}
             </button>
+            <button
+              type="button"
+              onClick={clearForm}
+              className="border px-3 py-2 rounded-md bg-white-500 shadow-lg shadow-white-500/50 text-gray-500 font-semibold"
+            >
+              Limpiar
+            </button>
+            </div>
           </form>
 
           {status && (
