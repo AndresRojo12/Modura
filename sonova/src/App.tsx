@@ -53,6 +53,17 @@ function App() {
                     >
                       {t("menu.apply")}
                     </Link>
+                    <div className="flex items-center gap-3 text-sm">
+                      <a href="" className="hover:underline">
+                        {t("menu.login")}
+                      </a>
+
+                      <span className="text-gray-400">|</span>
+
+                      <a href="" className="hover:underline">
+                        {t("menu.register")}
+                      </a>
+                    </div>
 
                     <select
                       onChange={(e) => changeLanguage(e.target.value)}

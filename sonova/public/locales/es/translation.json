@@ -4,7 +4,9 @@
     "costs": "Costos",
     "benefits": "Beneficios",
     "partners": "Socios",
-    "apply": "Aplicar"
+    "apply": "Aplicar",
+    "login": "Iniciar sesión",
+    "register": "Registrarse"
   },
 
   "hero": {

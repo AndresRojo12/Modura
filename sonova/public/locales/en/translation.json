@@ -4,7 +4,9 @@
     "costs": "Costs",
     "benefits": "Benefits",
     "partners": "Partners",
-    "apply": "Apply"
+    "apply": "Apply",
+    "login": "Login",
+    "register": "Register"
   },
 
   "hero": {
