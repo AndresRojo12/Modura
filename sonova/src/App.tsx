@@ -57,12 +57,6 @@ function App() {
                       <a href="" className="hover:underline">
                         {t("menu.login")}
                       </a>
-
-                      <span className="text-gray-400">|</span>
-
-                      <a href="" className="hover:underline">
-                        {t("menu.register")}
-                      </a>
                     </div>
 
                     <select
@@ -77,28 +71,22 @@ function App() {
                 </header>
 
                 {/* HERO */}
-                <section className="w-full pt-[160px] pb-32 text-center bg-violet-100 from-gray-50 to-green-50">
-                  <div className="max-w-3xl mx-auto">
-                    <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+                <section className="w-full pt-[160px] pb-32 text-center from-gray-50 to-green-50">
+                  <div className="max-w-6xl mx-auto flex flex-col items-center">
+                    <h1 className="text-6xl md:text-6xl font-bold leading-tight">
                       {t("hero.title")}
                     </h1>
 
-                    <p className="text-gray-600 text-lg mt-6 max-w-xl mx-auto">
+                    <p className="text-gray-600 text-lg mt-6 max-w-xl mx-auto text-center">
                       {t("hero.text")}
                     </p>
-
-                    <Link
-                      to="/contact"
-                      className="mt-10 inline-block bg-violet-500 hover:bg-violet-900 text-white px-8 py-3 rounded-md text-lg font-semibold transition"
-                    >
-                      {t("hero.start")}
-                    </Link>
                   </div>
                 </section>
+                <div className="w-full h-px bg-gray-300 mt-8"></div>
 
                 {/* SERVICIO */}
                 <section id="servicio" className="max-w-4xl mx-auto px-6 py-20">
-                  <h2 className="text-3xl font-semibold mb-4">
+                  <h2 className="text-3xl font-semibold mb-4 ">
                     {t("service.title")}
                   </h2>
                   <p className="text-gray-700 leading-relaxed text-lg">
@@ -128,17 +116,17 @@ function App() {
                     {t("benefits.title")}
                   </h2>
 
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10 shadow-lg shadow-indigo-500/50">
                     {t("benefits.cards", { returnObjects: true }).map(
                       (card, i) => (
                         <div
                           key={i}
-                          className="bg-gray-50 border border-gray-200 p-6 rounded-lg"
+                          className="bg-gray-50 border border-gray-200 p-6 rounded-lg shadow-lg shadow-indigo-500/50"
                         >
                           <h3 className="text-lg font-bold">{card.title}</h3>
                           <p className="text-gray-600 mt-2">{card.text}</p>
                         </div>
-                      )
+                      ),
                     )}
                   </div>
                 </section>
@@ -155,18 +143,18 @@ function App() {
                     {t("analytics.text")}
                   </p>
 
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10 shadow-lg shadow-indigo-500/50">
                     {/* CARD */}
                     {t("analytics.cards", { returnObjects: true }).map(
                       (card, i) => (
                         <div
                           key={i}
-                          className="bg-gray-50 border border-gray-200 p-6 rounded-lg"
+                          className="bg-gray-50 border border-gray-200 p-6 rounded-lg shadow-lg shadow-indigo-500/50"
                         >
                           <h3 className="text-lg font-bold">{card.title}</h3>
                           <p className="text-gray-600 mt-2">{card.text}</p>
                         </div>
-                      )
+                      ),
                     )}
                   </div>
                 </section>
@@ -180,18 +168,18 @@ function App() {
                     {t("royalties.title")}
                   </h2>
 
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10 shadow-lg shadow-indigo-500/50">
                     {/* CARD */}
                     {t("royalties.cards", { returnObjects: true }).map(
                       (card, i) => (
                         <div
                           key={i}
-                          className="bg-gray-50 border border-gray-200 p-6 rounded-lg"
+                          className="bg-gray-50 border border-gray-200 p-6 rounded-lg shadow-lg shadow-indigo-500/50"
                         >
                           <h3 className="text-lg font-bold">{card.title}</h3>
                           <p className="text-gray-600 mt-2">{card.text}</p>
                         </div>
-                      )
+                      ),
                     )}
                   </div>
                 </section>
@@ -288,6 +276,34 @@ function App() {
                 </section>
 
                 {/* FOOTER */}
+                <div className="w-full flex justify-center mt-8">
+                  <div className="h-48 w-96 flex items-center justify-center">
+                    <img
+                      className="object-contain"
+                      src="/MODURA Copia.png"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-8 mt-10 text-gray-700 text-sm max-w-4xl mx-auto">
+                  <div>
+                    {[
+                      "Santa Rosa de Osos, Antioquia",
+                      "CO",
+                    ].map((p, i) => (
+                      <p key={i}>{p}</p>
+                    ))}
+                  </div>
+                  <div className="text-right">
+                    {[
+                      "Contact:",
+                      "minnusrecords@gmail.com",
+                      "+57 3215770546"
+                    ].map((p, i) => (
+                      <p key={i}>{p}</p>
+                    ))}
+                  </div>
+                </div>
                 <footer className="text-center py-14 bg-white text-gray mt-20">
                   © {new Date().getFullYear()} Modura Distribution -{" "}
                   {t("footer.rights")}
