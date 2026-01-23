@@ -13,6 +13,8 @@ export class ContactController {
       body.lastName,
       body.email,
       body.category,
+      body.artistName,
+      body.sealNAME,
       body.musicPlatform,
       body.yourSocials,
       body.message,

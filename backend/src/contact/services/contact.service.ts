@@ -23,6 +23,8 @@ export class ContactService {
     lastName: string,
     email: string,
     category: string,
+    artistName: string,
+    sealNAME: string,
     musicPlatform: { platform: string; url: string }[] = [],
     yourSocials: { platform: string; url: string }[] = [],
     message: string,
@@ -46,6 +48,8 @@ export class ContactService {
       <p><strong>Apellido:</strong> ${lastName}</p>
       <p><strong>Email:</strong> ${email}</p>
       <p><strong>Categoría:</strong> ${category}</p>
+      ${artistName ? `<p><strong>Nombre del Artista:</strong> ${artistName}</p>` : ''}
+      ${sealNAME ? `<p><strong>Nombre del Sello:</strong> ${sealNAME}</p>` : ''}
 
       <h4>Plataformas musicales</h4>
       ${musicPlatform}

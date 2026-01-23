@@ -30,6 +30,12 @@ export class CreateContactDto {
   @IsString({ each: true })
   category: string;
 
+  @IsString()
+  artistName: string;
+
+  @IsString()
+  sealNAME: string;
+
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => LinkItemDto)
