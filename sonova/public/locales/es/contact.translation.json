@@ -26,6 +26,8 @@
     "musicPlatforms_add": "+ Agregar plataforma",
     "musicPlatforms_select": "Selecciona plataforma",
 
+    "notification_mail": "Mensaje enviado correctamente",
+
     "socials": "Tus redes",
     "socials_add": "+ Agregar red",
     "socials_select": "Selecciona red",
@@ -36,12 +38,12 @@
     "message_placeholder": "Cuéntanos en qué podemos ayudarte...",
 
     "submit": "Enviar mensaje",
+    "status_form_error": "Hubo un error con el formulario. Por favor verifica tus datos.",
 
     "status_required": "Por favor completa todos los campos obligatorios.",
-    "status_success": "Mensaje enviado correctamente 🎉",
+    "status_success": "Mensaje enviado correctamente",
     "status_error": "Error al enviar el mensaje. Intenta de nuevo.",
     "rights": "Todos los derechos reservados.",
     "clear": "Limpiar"
-
   }
 }

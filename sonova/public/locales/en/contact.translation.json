@@ -26,6 +26,8 @@
     "musicPlatforms_add": "+ Add platform",
     "musicPlatforms_select": "Select platform",
 
+    "notification_mail": "Message sent successfully",
+
     "socials": "Your Socials",
     "socials_add": "+ Add social",
     "socials_select": "Select social network",
@@ -37,11 +39,11 @@
 
     "submit": "Send message",
 
+    "status_form_error": "There was an error with the form. Please check your inputs.",
     "status_required": "Please complete all required fields.",
-    "status_success": "Message sent successfully 🎉",
+    "status_success": "Message sent successfully",
     "status_error": "Error sending message. Try again.",
     "rights": "All rights reserved.",
     "clear": "Clear"
-
   }
 }

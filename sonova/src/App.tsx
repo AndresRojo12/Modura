@@ -2,6 +2,24 @@ import "./App.css";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Contact from "./contact/Contact.tsx";
+import {
+  FaInstagram,
+  FaTiktok,
+  FaYoutube,
+  FaFacebook,
+  FaXTwitter,
+  FaSpotify,
+  FaSoundcloud,
+  FaDeezer,
+} from "react-icons/fa6";
+
+// importacion de iconos
+
+import {
+  SiApplemusic,
+  SiBeatport,
+  SiShazam,
+} from "react-icons/si";
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -9,6 +27,51 @@ function App() {
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
   };
+
+  const musicPlatforms = [
+    {
+      name: "Spotify",
+      icon: <FaSpotify className="text-green-500 text-2xl" />,
+    },
+    {
+      name: "SoundCloud",
+      icon: <FaSoundcloud className="text-orange-500 text-2xl" />,
+    },
+    {
+      name: "YouTube",
+      icon: <FaYoutube className="text-red-600 text-2xl" />,
+    },
+
+    {
+      name: "Deezer",
+      icon: <FaDeezer className="text-green-600 text-2xl" />,
+    },
+
+    {
+      name: "Apple Music",
+      icon: <SiApplemusic className="text-gray-900 text-2xl" />,
+    },
+    {
+      name: "Beatport",
+      icon: <SiBeatport className="text-blue-700 text-2xl" />,
+    },
+
+    {
+      name: "Juno Download",
+      img: <img src="descarga.png" alt="Juno Download" className="h-8 w-8" />,
+    },
+
+    {
+      name: "Shazam",
+      icon: <SiShazam className="text-blue-500 text-2xl" />,
+    },
+
+    {
+      name: "Traxsource",
+      img: <img src="trx.png" alt="Traxsource" className="h-8 w-8" />,
+    }
+    
+  ];
 
   return (
     <BrowserRouter>
@@ -82,10 +145,10 @@ function App() {
                     </p>
                   </div>
                 </section>
-                <div className="w-full h-px bg-gray-300 mt-8"></div>
+                <div className="h-px bg-gray-300 mt-8"></div>
 
                 {/* SERVICIO */}
-                <section id="servicio" className="max-w-4xl mx-auto px-6 py-20">
+                <section id="servicio" className="max-w-4xl mx-auto px-6 py-10">
                   <h2 className="text-3xl font-semibold mb-4 ">
                     {t("service.title")}
                   </h2>
@@ -95,7 +158,7 @@ function App() {
                 </section>
 
                 {/* COSTOS */}
-                <section id="costos" className="max-w-4xl mx-auto px-6 py-20">
+                <section id="costos" className="max-w-4xl mx-auto px-6 py-1">
                   <h2 className="text-3xl font-semibold mb-4">
                     {t("costs.title")}
                   </h2>
@@ -110,18 +173,18 @@ function App() {
                 {/* BENEFICIOS */}
                 <section
                   id="beneficios"
-                  className="max-w-6xl mx-auto px-6 py-20"
+                  className="max-w-6xl mx-auto px-6 py-10"
                 >
                   <h2 className="text-3xl font-semibold">
                     {t("benefits.title")}
                   </h2>
 
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10 shadow-lg shadow-indigo-500/50">
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10 shadow-indigo-500/50">
                     {t("benefits.cards", { returnObjects: true }).map(
                       (card, i) => (
                         <div
                           key={i}
-                          className="bg-gray-50 border border-gray-200 p-6 rounded-lg shadow-lg shadow-indigo-500/50"
+                          className="bg-gray-50 border border-gray-200 p-6 rounded-lg shadow-lg shadow-indigo-400/50"
                         >
                           <h3 className="text-lg font-bold">{card.title}</h3>
                           <p className="text-gray-600 mt-2">{card.text}</p>
@@ -134,7 +197,7 @@ function App() {
                 {/* ANALISIS Y REPORTES */}
                 <section
                   id="beneficios"
-                  className="max-w-6xl mx-auto px-6 py-20"
+                  className="max-w-6xl mx-auto px-6 py-10"
                 >
                   <h2 className="text-3xl font-semibold">
                     {t("analytics.title")}
@@ -143,13 +206,13 @@ function App() {
                     {t("analytics.text")}
                   </p>
 
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10 shadow-lg shadow-indigo-500/50">
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10 shadow-indigo-500/50">
                     {/* CARD */}
                     {t("analytics.cards", { returnObjects: true }).map(
                       (card, i) => (
                         <div
                           key={i}
-                          className="bg-gray-50 border border-gray-200 p-6 rounded-lg shadow-lg shadow-indigo-500/50"
+                          className="bg-gray-50 border border-gray-200 p-6 rounded-lg shadow-lg shadow-indigo-400/50"
                         >
                           <h3 className="text-lg font-bold">{card.title}</h3>
                           <p className="text-gray-600 mt-2">{card.text}</p>
@@ -162,19 +225,19 @@ function App() {
                 {/* PAGOS Y REGALIAS */}
                 <section
                   id="beneficios"
-                  className="max-w-6xl mx-auto px-6 py-20"
+                  className="max-w-6xl mx-auto px-6 py-10"
                 >
                   <h2 className="text-3xl font-semibold">
                     {t("royalties.title")}
                   </h2>
 
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10 shadow-lg shadow-indigo-500/50">
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10 shadow-indigo-500/50">
                     {/* CARD */}
                     {t("royalties.cards", { returnObjects: true }).map(
                       (card, i) => (
                         <div
                           key={i}
-                          className="bg-gray-50 border border-gray-200 p-6 rounded-lg shadow-lg shadow-indigo-500/50"
+                          className="bg-gray-50 border border-gray-200 p-6 rounded-lg shadow-lg shadow-indigo-400/50"
                         >
                           <h3 className="text-lg font-bold">{card.title}</h3>
                           <p className="text-gray-600 mt-2">{card.text}</p>
@@ -184,7 +247,7 @@ function App() {
                   </div>
                 </section>
 
-                <section id="servicio" className="max-w-4xl mx-auto px-6 py-20">
+                <section id="servicio" className="max-w-4xl mx-auto px-6 py-10">
                   <h2 className="text-3xl font-semibold mb-4">
                     {t("applications.title")}
                   </h2>
@@ -196,12 +259,25 @@ function App() {
                 </section>
 
                 {/* SOCIOS */}
-                <section id="socios" className="max-w-6xl mx-auto px-6 py-20">
+                <section id="socios" className="max-w-6xl mx-auto px-6 py-10">
                   <h2 className="text-3xl font-semibold">
                     {t("partners.title")}
                   </h2>
+                  <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-10">
+                    {musicPlatforms.map((platform, index) => (
+                      <div
+                        key={index} 
+                        className="flex items-center gap-3 mt-6"
+                      >
+                        {platform.icon ? platform.icon : platform.img}
+                        <span className="text-gray-700 text-lg">
+                          {platform.name}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
 
-                  <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-10 text-gray-700 text-sm">
+                  <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-12 text-gray-700 text-sm">
                     {[
                       "7Digital",
                       "Aarmy",

@@ -183,7 +183,7 @@ export default function Contact() {
     };
 
     if (!payload.name || !payload.email || !payload.message) {
-      toast.error("Por favor completa los campos obligatorios");
+      toast.error(t("contact.status_required"));
       return;
     }
 
@@ -197,9 +197,9 @@ export default function Contact() {
         }
       );
 
-      if (!res.ok) throw new Error("Error enviando formulario");
+      if (!res.ok) throw new Error(t("contact.status_form_error"));
 
-      toast.success("Mensaje enviado correctamente");
+      toast.success(t("contact.notification_mail"));
 
       setForm({
         payload: {
@@ -216,7 +216,7 @@ export default function Contact() {
       });
     } catch (err) {
       console.error(err);
-      toast.error("Error enviando el mensaje ");
+      toast.error(t("contact.status_error"));
     }
   };
 
@@ -274,7 +274,7 @@ export default function Contact() {
                 name="name"
                 value={form.payload.name}
                 onChange={handleChange}
-                className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-violet-300 "
                 placeholder={t("contact.name_placeholder")}
               />
             </div>
@@ -289,7 +289,7 @@ export default function Contact() {
                 name="lastName"
                 value={form.payload.lastName}
                 onChange={handleChange}
-                className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-violet-300"
                 placeholder={t("contact.lastName_placeholder")}
               />
             </div>
@@ -304,14 +304,14 @@ export default function Contact() {
                 name="email"
                 value={form.payload.email}
                 onChange={handleChange}
-                className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-violet-300"
                 placeholder={t("contact.email_placeholder")}
               />
             </div>
 
             {/* Categoría (texto por ahora) */}
             <div>
-              <label className="block mb-2 font-medium">
+              <label className="block mb-2 font-medium ">
                 {t("contact.category")}
               </label>
               <select
@@ -552,7 +552,7 @@ export default function Contact() {
                 value={form.payload.message}
                 onChange={handleChange}
                 rows={5}
-                className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-violet-500"
+                className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-violet-300"
                 placeholder={t("contact.message_placeholder")}
               ></textarea>
             </div>
