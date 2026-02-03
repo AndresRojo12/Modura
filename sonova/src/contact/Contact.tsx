@@ -189,7 +189,7 @@ export default function Contact() {
 
     try {
       const res = await fetch(
-        `${import.meta.env.VITE_API_URL_BACKEND}contact`,
+        `${import.meta.env.VITE_API_URL}contact`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
