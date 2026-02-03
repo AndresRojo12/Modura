@@ -12,7 +12,7 @@ export class ContactService {
 
   constructor(private readonly configService: ConfigService) {
     const apiKey = this.configService.get<string>('RESEND_API_KEY');
-    console.log('RESEND_API_KEY:', process.env.RESEND_API_KEY);
+    //console.log('RESEND_API_KEY:', process.env.RESEND_API_KEY);
     if (!apiKey) throw new Error('RESEND_API_KEY no está configurada');
     this.resend = new Resend(apiKey);
   }
